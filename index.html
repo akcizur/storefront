@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Maison Terre</title>
     <meta name="description" content="Considered goods for a quieter home." />
+    <script>
+      (() => {
+        const base = "/storefront/";
+        const storedPath = sessionStorage.getItem("github-pages-path");
+        if (
+          storedPath &&
+          (window.location.pathname === base ||
+            window.location.pathname === base.slice(0, -1))
+        ) {
+          sessionStorage.removeItem("github-pages-path");
+          window.history.replaceState(null, "", base + storedPath);
+        }
+      })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap" rel="stylesheet" />
