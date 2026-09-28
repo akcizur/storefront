@@ -15,7 +15,7 @@ export default function App() {
   return (
     <CartProvider>
       <Toaster theme="dark" />
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <Routes>
           <Route element={<StoreLayout />}>
             <Route path="/" element={<Index />} />
